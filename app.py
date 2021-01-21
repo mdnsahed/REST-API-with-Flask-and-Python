@@ -21,8 +21,9 @@ api.add_resource(Item, '/item/<string:name>') # http://127.0.0.1:5000/student/ro
 api.add_resource(ItemList, '/items')
 api.add_resource(UserRegister, '/register')
 api.add_resource(StoreList, '/stores')
+db.init_app(app)
 
 if __name__ == '__main__':
     from db import db
-    db.init_app(app)
+
     app.run(port=5000, debug=True)
